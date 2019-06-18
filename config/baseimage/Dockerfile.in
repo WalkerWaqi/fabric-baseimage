@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 FROM _NS_/fabric-basejvm:_TAG_
+COPY go-1.12.6-gm.tar.gz /tmp/
 COPY scripts /tmp/scripts
 RUN cd /tmp/scripts && \
     common/packages.sh && \
@@ -13,5 +14,5 @@ RUN cd /tmp/scripts && \
     rm -rf /tmp/scripts
 ENV GOPATH=/opt/gopath
 ENV GOROOT=/opt/go
-ENV GOCACHE=off
+# ENV GOCACHE=off
 ENV PATH=$PATH:$GOROOT/bin:$GOPATH/bin

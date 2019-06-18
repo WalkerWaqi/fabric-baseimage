@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # Update system
-apt-get update -qq
+apt-get update -y
 
 # Prep apt-get for docker install
 apt-get install -y apt-transport-https ca-certificates
@@ -15,7 +15,7 @@ apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E8
 echo deb https://apt.dockerproject.org/repo ubuntu-xenial main > /etc/apt/sources.list.d/docker.list
 
 # Update system
-apt-get update -qq
+apt-get update -y
 
 # Install docker
 apt-get install -y linux-image-extra-$(uname -r) apparmor docker-engine
